@@ -1,0 +1,11 @@
+OUTPUT => 
+5
+5
+5
+5
+5
+
+
+The code uses a for loop to iterate from i = 0 to i = 4. Inside the loop, a setTimeout() function is called for each iteration. 
+The setTimeout() function schedules the execution of the provided callback function after a delay of 100 milliseconds. The callback function
+prints the value of i to the console in each iteration.
