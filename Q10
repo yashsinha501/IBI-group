@@ -1,1 +1,32 @@
+The output of the code will be:
+
+1
+4
+2
+3
+
+Now explanation of code :
+
+1. `console.log(1);`: This is a synchronous operation, so it will be the first thing logged to the console. The output will be `1`.
+
+2. `setTimeout(printNumber, 0, 2);`: This is an asynchronous operation using `setTimeout`. Despite the delay being set to 0 milliseconds, it
+   doesn't mean the callback will be executed immediately. Instead, it will be added to the event queue and executed after the synchronous code 
+   has finished executing.
+
+3. `setTimeout(printNumber, 100, 3);`: This is another asynchronous operation using `setTimeout`. The callback function will be executed after a
+   delay of 100 milliseconds. Since this operation has a longer delay than the previous one, its callback will be executed later.
+
+4. `console.log(4);`: This is another synchronous operation, so it will be the third thing logged to the console after `1`. The output will be `4`.
+
+Now, the event queue looks like this:
+
+- Event Queue: `[function(){printNumber(2)}, function(){printNumber(3)}]`
+
+The event loop is responsible for checking if the call stack (where synchronous code execution happens) is empty and then picking the first
+function from the event queue and moving it to the call stack for execution. Since the call stack is empty after executing `1` and `4`, the event 
+loop will execute the functions in the order they were added to the queue:
+
+5. The function `printNumber(2)` is executed, and `2` is logged to the console.
+
+6. After a delay of 100 milliseconds, the function `printNumber(3)` is executed, and `3` is logged to the console.
 
