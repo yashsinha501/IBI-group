@@ -1,1 +1,33 @@
 
+OUTPUT => 
+array 1: length=5 last=j,o,n,e,s
+array 2: length=5 last=j,o,n,e,s
+
+
+
+now the explanation of the code line by line in comments
+
+var arr1 = "john".split(''); 
+
+// arr1 will be ['j', 'o', 'h', 'n'].
+
+var arr2 = arr1.reverse();
+
+// arr2 is assigned the reference to the reversed arr1, which is ['n', 'h', 'o', 'j'].
+
+var arr3 = "jones".split('');
+
+// arr3 will be ['j', 'o', 'n', 'e', 's'].
+
+arr2.push(arr3);
+
+// arr3 (an array) is added as an element at the end of arr2. Now, arr2 will be ['n', 'h', 'o', 'j', ['j', 'o', 'n', 'e', 's']].
+
+console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
+
+// The length of arr1 is 4, and the last element is 'n'. So, it will log: array 1: length=4 last=n.
+
+console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
+
+// The length of arr2 is 5 (it contains four elements, and one of them is an array), and the last element is ['j', 'o', 'n', 'e', 's'] 
+// (which is an array itself). So, it will log: array 2: length=5 last=j,o,n,e,s.
