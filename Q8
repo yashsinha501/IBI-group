@@ -7,7 +7,9 @@ OUTPUT =>  1 4 3 2
 to be executed after 1000 milliseconds (1 second). Since it is asynchronous, it won't block the execution of the rest of the code. The callback will 
 be executed later, so `2` will not be logged immediately.
 
-3. `setTimeout(function(){console.log(3)}, 0);`: This is another asynchronous operation using `setTimeout`. Despite the delay being set to 0 milliseconds, it doesn't mean the callback will be executed immediately. Instead, it will be added to the event queue and executed after the synchronous code has finished executing. As a result, `3` will be logged after `1` and `4`, but before `2`.
+3. `setTimeout(function(){console.log(3)}, 0);`: This is another asynchronous operation using `setTimeout`. Despite the delay being set to 0 
+milliseconds, it doesn't mean the callback will be executed immediately. Instead, it will be added to the event queue and executed after the
+synchronous code has finished executing. As a result, `3` will be logged after `1` and `4`, but before `2`.
 
 4. console.log(4);: This is another synchronous operation, so it will be the third thing logged to the console after `1`. The output will be `4`.
 
